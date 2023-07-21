@@ -1,5 +1,4 @@
 # FPGA-CLAHE
-Constrast limited adaptive histogram equlization based on Verilog
 
 设计了系统框图如图所示。将整幅图片分割成4*4=16个block，每个block对应一块深度为256的ram存储区域。像素点逐个输入，使用一个行计数器和列计数器判断像素点坐标，用坐标判断像素点所属的block，并根据灰度值生成对应地址，并进行直方图统计。初步完成统计后，遍历存储区域进行直方图累加，在此过程中对灰度级最大值进行限制和重新分配。
 ![image](https://github.com/nicyyyy/FPGA-CLAHE/assets/57220819/874689c6-2632-4a98-97ad-50db67422d63)
